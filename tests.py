@@ -1,11 +1,14 @@
 from dna import DNA
+import pytest
 
-if __name__=='__main__':      # what's below only active if not called as import module dna
-    try:
-        assert DNA('ATB')
-    except ValueError:
-        pass
+def bad_seq_raises_error():
+    with pytest.raises(ValuError):
+        DNA('ATB')
+
+
+
+def test_complem_seq_works():
     assert DNA('GTC').complimentary_sequence == DNA('CAG')
     assert DNA('ATC').complimentary_sequence == DNA('TAG')
-    assert DNA('ATC').complimentary_sequence == 'TAG'
-    print('it worked')
+
+#if __name__=='__main__':      # what's below only active if not called as import module dna

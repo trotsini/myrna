@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 complementary_nucleotides = {'A': 'U', 'U': 'A', 'C': 'G', 'G': 'C'}
+=======
+complimentary_nucleotides = {'A': 'U', 'U': 'A', 'C': 'G', 'G': 'C'}
+>>>>>>> cf0020488f9a3ca9b1eab6d8eaf3480bc3130a49
 
 
 class RNA:
@@ -21,7 +25,17 @@ class RNA:
         return True if all(are_good) else False
 
     @property
+<<<<<<< HEAD
     def complementary_sequence(self):
         return RNA(''.join(complementary_nucleotides[nt.upper()] for nt in self.sequence))
+=======
+    def complimentary_sequence(self):
+        return RNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
+
+    @property
+    def reverse_sequence(self):
+        return RNA(''.join(reversed(self.sequence)))
+
+>>>>>>> cf0020488f9a3ca9b1eab6d8eaf3480bc3130a49
 
 

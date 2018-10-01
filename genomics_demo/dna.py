@@ -17,16 +17,23 @@ class DNA:
         return "DNA(sequence='{}')".format(self.sequence)
 
     def _check_validity(self):
+<<<<<<< HEAD
         are_good = (nucleotide.upper() in 'GCAT' for nucleotide in self.sequence)
         return True if all(are_good) else False
+=======
+        return all(nucleotide in 'GCAT' for nucleotide in self.sequence.upper())
+>>>>>>> cf0020488f9a3ca9b1eab6d8eaf3480bc3130a49
 
     @property
     def complimentary_sequence(self):
         return DNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
 
+<<<<<<< HEAD
     @property
     def check_triplet(self):
         return DNA('{} codons'.format(len(self.sequence)/ 3))
 
 
 #we ve got a module!
+=======
+>>>>>>> cf0020488f9a3ca9b1eab6d8eaf3480bc3130a49

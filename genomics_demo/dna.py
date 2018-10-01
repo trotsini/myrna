@@ -24,5 +24,9 @@ class DNA:
     def complimentary_sequence(self):
         return DNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
 
+    @property
+    def check_triplet(self):
+        return DNA('{} codons'.format(len(self.sequence)/ 3))
+
 
 #we ve got a module!
